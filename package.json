@@ -1,0 +1,11 @@
+{
+  "name": "yarn-test",
+  "version": "0.0.1",
+  "description": "Testing Yarn while learning",
+  "main": "index.js",
+  "author": "Tigran Keshishyan <tigrankeshishyan1@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^4.2.0"
+  }
+}
