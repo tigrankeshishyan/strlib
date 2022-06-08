@@ -4,11 +4,30 @@
   "description": "Testing Yarn while learning",
   "main": "index.js",
   "scripts": {
-    "test": "ava"
+    "test": "BABEL_ENV=test ava",
+    "build": "BABEL_ENV=build rollup -c"
+  },
+  "ava": {
+    "files": [
+      "test/*.js"
+    ],
+    "source": [
+      "src/*.{js}",
+      "!dist/**/*"
+    ],
+    "tap": true,
+    "require": "babel-register",
+    "babel": "inherit"
   },
   "author": "Tigran Keshishyan <tigrankeshishyan1@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^4.2.0"
+    "@ava/babel-preset-stage-4": "^4.0.0",
+    "ava": "^4.2.0",
+    "babel-core": "6.24.1",
+    "babel-plugin-external-helpers": "6.22.0",
+    "babel-preset-env": "1.4.0",
+    "rollup-plugin-babel": "2.7.1",
+    "rollup-watch": "3.2.2"
   }
 }
